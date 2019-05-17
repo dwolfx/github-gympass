@@ -8,7 +8,7 @@ jobs:
     <<: *witmy
     steps:
       - checkout
-      - run: yarn add
+      - run: npm install
       - run: yarn test
       - run: yarn build
       - persist_to_workspace:
