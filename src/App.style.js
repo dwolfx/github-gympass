@@ -34,3 +34,7 @@ export const AreaProfile = styled.div`
 export const AreaContent = styled.div`
   width: 70%;
 `;
+export const ReposList = styled.div`
+  display: flex;
+  align-items: center;
+`;

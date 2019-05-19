@@ -14,7 +14,15 @@ export const getCommits = (repo, callback) => {
 export const getRepo = callback => {
   axios
     .get(
-      `${url}/users/dwolfx/repos?client_id=${client_id}&client_secret=${client_secret}`
+      `${url}/users/${user}/repos?client_id=${client_id}&client_secret=${client_secret}`
+    )
+    .then(callback);
+};
+
+export const getUser = callback => {
+  axios
+    .get(
+      `${url}/users/${user}?client_id=${client_id}&client_secret=${client_secret}`
     )
     .then(callback);
 };

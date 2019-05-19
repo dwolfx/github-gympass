@@ -12,6 +12,7 @@ import {
 } from './App.style';
 import Repo from './components/Repo';
 import Commit from './components/Commit';
+import User from './components/User';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Content>
         <AreaProfile>
           <p>Profile</p>
+          <User />
         </AreaProfile>
         <AreaContent>
           <Switch>
