@@ -3,7 +3,14 @@ import { NavLink } from 'react-router-dom';
 import { getRepo } from '../services/github.api';
 import MdStar from 'react-ionicons/lib/MdStar';
 import MdGitNetwork from 'react-ionicons/lib/MdGitNetwork';
-import { ReposList } from '../App.style';
+import {
+  ReposList,
+  RepoHeader,
+  FlexBox,
+  RepoSpace,
+  RepoIcons,
+  RepoCount
+} from '../App.style';
 import Loader from './Loader';
 
 const compare = {
@@ -38,23 +45,32 @@ class Repos extends Component {
     console.log(repos);
     return (
       <div>
-        <p>Home / </p>
-        <div onClick={this.sortBy('stars')}>
-          <p>Sort: Stars</p>
-        </div>
-        <div onClick={this.sortBy('forks')}>
-          <p>Sort: Forks</p>
-        </div>
+        <RepoHeader>
+          <p>Home / </p>
+          <FlexBox>
+            <RepoSpace>Sort By: </RepoSpace>
+            <RepoIcons onClick={this.sortBy('stars')}>
+              <MdStar beat={true} color="orange" /> Stars
+            </RepoIcons>
+            <RepoSpace> / </RepoSpace>
+            <RepoIcons onClick={this.sortBy('forks')}>
+              <MdGitNetwork /> Forks
+            </RepoIcons>
+          </FlexBox>
+        </RepoHeader>
         {repos.length === 0 && <Loader />}
         {repos.map(item => (
           <NavLink key={item.id} exact to={`/repo/${item.name}/commits`}>
             <ReposList>
-              <p>Nome: {item.name}</p>
-              <div>
-                <MdStar beat={true} color="orange" />: {item.stargazers_count}
-                <MdGitNetwork />
-                {item.forks_count}
-              </div>
+              <p>{item.name}</p>
+              <FlexBox>
+                <RepoCount>
+                  <MdStar beat={true} color="orange" /> {item.stargazers_count}
+                </RepoCount>
+                <RepoCount>
+                  <MdGitNetwork /> {item.forks_count}
+                </RepoCount>
+              </FlexBox>
             </ReposList>
           </NavLink>
         ))}

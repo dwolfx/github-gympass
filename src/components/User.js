@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getUser } from '../services/github.api';
+import { Image, UserLink, UserBio, TextProfile } from '../App.style';
 
 class User extends Component {
   state = { user: {} };
@@ -14,8 +15,18 @@ class User extends Component {
     const { user } = this.state;
     return (
       <div>
-        <p>{user.url}</p>
-        <img src={user.avatar_url} />
+        <Image src={user.avatar_url} />
+        <TextProfile>
+          <p>
+            <UserLink href={`https://github.com/${user.login}`}>
+              {user.name}
+            </UserLink>
+          </p>
+          <UserBio>{user.bio}</UserBio>
+          <p>
+            <UserLink href={user.blog}>{user.blog}</UserLink>
+          </p>
+        </TextProfile>
       </div>
     );
   }

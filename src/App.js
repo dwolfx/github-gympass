@@ -27,7 +27,6 @@ function App() {
       </Header>
       <Content>
         <AreaProfile>
-          <p>Profile</p>
           <User />
         </AreaProfile>
         <AreaContent>

@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { getCommits } from '../services/github.api';
 import Loader from './Loader';
+import {
+  ReposList,
+  RepoHeader,
+  RepoSpace,
+  FlexBox,
+  CommitHeader,
+  CommitInput,
+  RepoLink
+} from '../App.style';
 
 const filterCommits = (commits, term) => {
   return commits.filter(({ commit }) => includesTerm(commit.message, term));
@@ -33,23 +42,30 @@ class Commit extends Component {
 
     return (
       <div>
-        <p>
-          <NavLink exact to="/">
-            Home
-          </NavLink>
-          / {match.params.repo} / Commits
-        </p>
-        <input
-          type="text"
-          value={filter}
-          onChange={this.handleChange('filter')}
-        />
+        <RepoHeader>
+          <FlexBox>
+            <CommitHeader>
+              <NavLink exact to="/">
+                <RepoLink>Home</RepoLink>
+              </NavLink>
+              <RepoSpace>/</RepoSpace> {match.params.repo}
+            </CommitHeader>
+          </FlexBox>
+          <FlexBox>
+            <CommitInput
+              type="text"
+              placeholder="Pesquisar por Commit"
+              value={filter}
+              onChange={this.handleChange('filter')}
+            />
+          </FlexBox>
+        </RepoHeader>
 
         {commits.length === 0 && <Loader />}
         {commits.map(item => (
-          <div key={item.sha}>
+          <ReposList key={item.sha}>
             <p>{item.commit.message}</p>
-          </div>
+          </ReposList>
         ))}
       </div>
     );
