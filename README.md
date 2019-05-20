@@ -24,25 +24,25 @@ We will install this project with Terminal.
 
 First of all, clone the project from the repository:
 
-```bash
+```
 https://github.com/dwolfx/github-gympass.git
 ```
 
 Enter in project past:
 
-```bash
+```
 cd github-gympass
 ```
 
 After install all dependencies:
 
-```bash
+```
 npm install
 ```
 
 When the installation is completed, run the project:
 
-```bash
+```
 npm run start
 --OR--
 yarn start
