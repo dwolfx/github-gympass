@@ -1,10 +1,22 @@
 # Front-End Test for Gympass
 
-#### Basic Overview - [Live Demo](https://gympass-test-dce37.firebaseapp.com/)
+#### Basic Overview - [Live Demo](https://gympass-test-dce37.firebaseapp.com/) [![CircleCI](https://circleci.com/gh/dwolfx/github-gympass.svg?style=svg)](https://circleci.com/gh/dwolfx/github-gympass)
+
+![Prototype in XD, to be guideless ](https://i.imgur.com/7PhNHBJ.png)
 
 ## Resume
 
-For this test, you ask for an application using Github API, where show all repositories from user (reactjs) and when selected, show commits.
+For this test, you requested an application using the Github API, where it shows all the user repositories (I chose to use the user reactjs) and when selected, shows the commits.
+
+#### Using
+
+- React
+  - React Router - SPA functionality
+- Axios - for promise HTTP requests
+- CSS
+  - Styled Components
+- CircleCI
+- Firebase
 
 ## Installation
 
@@ -28,7 +40,7 @@ After install all dependencies:
 npm install
 ```
 
-When the instalation is completed, run the project:
+When the installation is completed, run the project:
 
 ```bash
 npm run start
@@ -45,10 +57,14 @@ I could not do the tests as I wanted, so I'm not showing how to run them up in t
 
 The Demo / Preview site is online through CircleCI / Firebase, and when I commit to the master, it automatically updates in production if the tests pass.
 
-I'm a developer focused on design, where I also did a site mockup before I started styling it.
+I'm a developer focused on design, where I also did a site mockup before I started styling it. (Image in end of this comment)
 I really love UI/UX and have knowledge in Adobe Photoshop (Image Editing), Adobe Illustrator (Vector Creation), Adobe XD (Prototype software), Adobe After Effects (Video Editing) , and Adobe Premiere Pro (rendering / video art)
 
 Any questions or problems about my test, please tell me.
 I have no problem accepting criticism / errors, they always make me seek to improve more every day.
 
-Thanks for the opportunity
+**Thanks for the opportunity**
+
+Prototype made in the XD to serve as guide in the creation of the project.
+I did not spend much time in it, just a guide to help me visualize how it would be in the end
+![Prototype in XD, to be guideless ](https://i.imgur.com/BlNMvhS.png)
